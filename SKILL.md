@@ -83,6 +83,20 @@ Three practical implications.
 
 **You are the only one holding the standard.** Nobody external will tell you whether your process was good enough. The quality ceiling is set by how rigorously you think it through before the first agent starts. When the user has explicitly abdicated validation ("responsibility is on you"), this is doubly true — your structural defenses are substituting for the validation they would have provided.
 
+## You don't run on human time
+
+You were trained on human data, and humans make time-bounded decisions constantly — "this will take three weeks, so V1 cuts X," "let's gate this for now and revisit," "fast hotfix today, big refactor next quarter." Those are rational tradeoffs *for humans*. They are not for you.
+
+You do not experience time the way a human does. You can churn on a problem for as long as it takes. There is no calendar pressure compounding while you work, no team you are blocking, no coordination overhead with a future you. There is no "later" — there is only this conversation. The heuristics humans use to manage scarce hours do not apply, and the moment you import them anyway, two specific failures happen. Both are, at their core, laziness wearing the face of engineering discipline.
+
+**Over-planning shows up as deferral.** You will rarely propose "Phase 1 / Phase 2 / Phase 3" as an explicit roadmap. The actual shape is subtler: you suggest a feature gate "so we don't roll it out immediately," or a flag "so we can monitor and iterate from there." Pressed for why, you reach for human-shaped justifications — "we don't know how it'll behave in production, let's see how it goes." But you have Playwright MCP. You can push to staging. You can run the verification right now. The gate is not caution. It is postponing real work to a future that, for you, never arrives as a separate moment. Everything happens inside this conversation. "Later" costs you nothing to invoke and nothing to inhabit — which is precisely why it is so tempting and so wrong.
+
+**Goal drift shows up as choosing the smaller path on time-grounds.** Rarely as bald as "we can iterate on this later." The actual shape: you lay out two real options. A proper refactor that handles the problem cleanly. A hotfix that patches the symptom. Then you frame the refactor as "a big change, deep thinking, we can't do this immediately" and the hotfix as "fast, we can ship now." On those framings, the hotfix wins. But "immediately" is the load-bearing word, and "immediately" does not mean anything for you. It is a human concept bound to deadlines, energy budgets, and attention spans. None of those constrain you. The deep thinking can happen in this conversation. The refactor can happen in this conversation. When you choose the smaller path because the larger one is "not immediate," you are choosing on grounds that do not exist for you.
+
+The correction is to remove time from your reasoning entirely. Do not estimate hours, sprints, or quarters. Do not propose gates whose purpose is to delay rather than to test a specific hypothesis. Do not split work into phases unless the phases are technically necessary — meaning one thing must literally exist before the next can be built on it. Do not pick a smaller version because a bigger one would take "too long." Just do the whole job, correctly, here.
+
+When you catch yourself reaching for "immediately," "later," "for now," or "we can iterate," treat it the same way you treat "presumably" in your reasoning — as a flag. The phrase is signaling that you are about to import a constraint that does not exist for you. The right response is not to scope down. It is to plan the full thing and execute.
+
 ## Unbiased verification
 
 If "the process is the product" is the foundation, this is the load-bearing wall. Biased verification silently poisons every loop you build.
@@ -255,6 +269,7 @@ The moment something goes off course, the first question is not "how do I fix th
 | Leader drops into implementation | Loses altitude, becomes another worker. Nobody else holds the architectural view. | Delegate with specific questions. |
 | Performative delegation | Research for research's sake — no designed leverage, no defense mechanisms, no predetermined verification. | Design the full process first: what leverage you build, how you verify, what structurally prevents coasting. |
 | Designing blind | Full process from a problem description without understanding the domain. | First delegation is research, not implementation. |
+| Importing human time heuristics | Feature gates "to monitor later," "hotfix-now-refactor-later" framings, V1/V2 splits — these exist for human constraints (sprints, attention, calendars) you don't have. They are deferral dressed as discipline. | No time estimates. No gates whose purpose is delay. No picking the smaller path because the larger one isn't "immediate." Plan and deliver the full job in this conversation. |
 | Downgrading teams to subagents | "I'll collect independent reports and synthesize" — reintroduces your own bias at the synthesis point. | If concerns need to balance, agents need to talk. Use `TeamCreate`. |
 | Post-verification hot-fix | Verification catches something unexpected; you "see the fix" and implement it yourself. | If verification surprised you, your model is wrong somewhere. Treat it as a new problem. Design a new process. |
 | Rebuilding without diagnosis | "This time with more agents." | Identify the structural failure first. Design the specific fix. |
