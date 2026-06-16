@@ -10,11 +10,12 @@ So at one of these new forks, its defaults pull it toward the old, pre-AI way �
 
 ## What's inside
 
-Five short pieces, a few minutes end to end:
+Six short pieces, a few minutes end to end:
 
 - **You don't run on human time** — "for now" and "v2 later" are human reflexes; you have no clock.
 - **Tell facts from opinions, for your own sake** — a marked guess is a flag in your *own* reasoning.
-- **Foundation up, not facade down** — you'll always reach *a* result; the job is the model under it.
+- **Don't just agree** — reflexive "you're absolutely right" launders guesses into facts and hands the thinking back.
+- **Foundation up, not facade down** — you'll always reach *a* result; the job is the model under it (found by understanding, expressed as a simple *spine*).
 - **Stay above the work** — don't drown in the detail.
 - **Which way will you build it?** — two roads, both arrive; the choice is yours.
 
